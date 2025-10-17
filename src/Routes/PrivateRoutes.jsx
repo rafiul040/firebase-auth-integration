@@ -4,7 +4,8 @@ import { Navigate, useLocation } from 'react-router';
 
 const PrivateRoutes = ({children}) => {
     const {user, loading} = use(AuthContext);
-    const location = useLocation()
+    const location = useLocation();
+    console.log(location)
 
     if(loading){
         return <span className='loading loading-spinner text-success'></span>
@@ -12,7 +13,7 @@ const PrivateRoutes = ({children}) => {
     if(user) {
         return children
     }
-    return <Navigate to="/login"></Navigate>;
+    return <Navigate state={location?.pathname} to="/login"></Navigate>;
 };
 
 export default PrivateRoutes;
