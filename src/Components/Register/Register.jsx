@@ -5,6 +5,7 @@ import { auth } from '../Firebase/firebase.init';
 
 
 const Register = () => {
+  
 
 
     const handleRegister = event => {
